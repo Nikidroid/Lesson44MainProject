@@ -1,9 +1,11 @@
 #include <stdlib.h>
 #include <string>
+#include <ctime>
 
 using namespace std;
 
 void random_init(int* vector, int size, int bound) {
+	srand(time(NULL));
 	for (int i = 0; i < size; i++) {
 		*(vector + i) = rand() % (bound + 1);
 	}
