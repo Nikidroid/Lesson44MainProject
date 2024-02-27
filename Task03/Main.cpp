@@ -5,7 +5,8 @@ using namespace std;
 void random_init(int* vector, int size, int bound);
 string vector_to_string(int* vector, int size);
 
-bool is_the_same_value(int* vector, int size);
+bool is_the_same_values(int* vector, int size);
+bool is_different_values(int* vector, int size);
 
 int main() {
 	int size;
@@ -20,10 +21,13 @@ int main() {
 
 	cout << "Elements of vector: " << vector_to_string(vector, size) << endl;
 
-	bool result = is_the_same_value(vector, size);
+	bool result = is_the_same_values(vector, size);
 
 	cout << (result ? "Yes. There are same values." 
 					: "No. All the values are different.") << endl;
+
+	cout << (is_different_values(vector, size) ? "Yes. All the values are different."
+		: "No. There are same values.") << endl;
 
 	delete[] vector;
 
